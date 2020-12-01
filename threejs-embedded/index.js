@@ -29,6 +29,15 @@ const initTHREE = function(){
 	draco.setDecoderPath( './node_modules/three/examples/js/libs/draco/' );
 	DracoGLTFLoader.setDRACOLoader( draco );
 
+	// hydra canvas target for sources
+	const hydracns = document.createElement('canvas')
+	hydracns.id = "asadf"
+	hydra.display = "none"
+	hydracns.width =  window.innerWidth
+	hydracns.height = window.innerHeight
+	let hydraTarget = new hydra.constructor({canvas: hydracns, makeGlobal:false})
+
+
 
 	// on resize 
 	window.addEventListener('resize', function onWindowResize() {
@@ -41,7 +50,12 @@ const initTHREE = function(){
 		window.requestAnimationFrame(animate)
 		renderer.render(scene, camera);
 		controls.update();
-
+		scene.children.forEach(child => {
+			if(!child.isMesh) return 
+			if(child.material.map){
+				child.material.map.needsUpdate = true
+			}
+		})
 	}
 
 	
@@ -49,16 +63,20 @@ const initTHREE = function(){
 	
 	camera.position.z = -5
 
+	controls.enabled = false
+
 	window.THREE = THREE
 	window.sTHREE = hydra.createSource()
 	window.sTHREE.init({src: renderer.domElement})
 
 	return {
 		scene: scene,
+		orbitControls : controls,
 		camera: camera,
 		renderer: renderer,
 		GLTFLoader: new THREE.GLTFLoader(),
 		DracoGLTFLoader: DracoGLTFLoader,
+		hydraTarget: hydraTarget
 	}
 }
 
