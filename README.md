@@ -28,6 +28,25 @@ for [hydra standalone](https://github.com/ojack/hydra-standalone)
 ```javascript
 import three from "./three-js.js"
 ```
+## Docs
+
+instanciate three js and save this into a variable
+
+```javascript
+t = new three()
+``` 
+
+the three object has:
+
+- `t.scene` a threejs scene
+- `t.renderer` a `THREE.WebGLRenderer`
+- `t.camera` for a `THREE.PerspectiveCamera`
+- `t.ambienLight` for `THREE.AmbientLight`
+- `t.DracoGLTFLoader` for a `DracoGLTFLoader` loader 
+
+this library puts `THREE` library on global, so you can use it as you want
+
+[three js docs](https://threejs.org/docs/)
 
 ## issues
 
