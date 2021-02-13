@@ -34,7 +34,7 @@ instanciate three js and save this into a variable
 
 ```javascript
 t = new three()
-``` 
+```
 
 the three object has:
 
