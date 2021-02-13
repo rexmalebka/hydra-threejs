@@ -74,6 +74,7 @@ class three {
 		this.ambientLight = Ambientlight
 
 		this.DracoGLTFLoader = DracoGLTFLoader
+
 	}
 }
 window.three = three
