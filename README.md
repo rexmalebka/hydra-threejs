@@ -21,9 +21,14 @@ for [hydra standalone](https://github.com/ojack/hydra-standalone)
 
 > npm install three --save
 
+- copy `atom/three-js.js` into `lib/`
+
 - on `lib/main.js` put this line:
 
 ```javascript
-import three from "./hydra-threejs/atom/three-js.js"
+import three from "./three-js.js"
 ```
 
+## issues
+
+of course, post them in issues or even better, make a PR :).
