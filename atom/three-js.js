@@ -4,7 +4,7 @@ import {default as Hydra_atom } from './atom-hydra.js'
 import Hydra from 'hydra-synth'
 import { CompositeDisposable } from 'atom'
 
-import * as THREE_ from 'THREE'
+import * as THREE_ from 'three'
 const THREE = THREE_
 window.THREE = THREE
 const GLTFLoader = require("three/examples/js/loaders/GLTFLoader.js")
