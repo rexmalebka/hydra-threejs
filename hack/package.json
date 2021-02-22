@@ -1,0 +1,21 @@
+{
+  "name": "hack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "compression-webpack-plugin": "^7.1.2",
+    "ts-loader": "^8.0.17",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "dependencies": {
+    "three": "^0.125.2"
+  }
+}
