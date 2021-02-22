@@ -21,13 +21,20 @@ export class three implements three{
 	constructor(){
 		let scene = new THREE.Scene()
 		let renderer = new THREE.WebGLRenderer({ antialias: true })
-		let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000)
+		let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
+		['s0','s1','s2','s3','s4'].forEach( (s)=>{
+			if(window.hasOwnProperty(s)){
+				window[s]['initTHREE'] = function(three_ ){
+					window[s]['src'] = three_.renderer.domElement
+				}
+			}
+                })
 
 
 		renderer.setSize(window.innerWidth, window.innerHeight)
 		renderer.domElement.style.display = "none";
 		renderer.domElement.classList.add("threejs");
-		(document.querySelector(".hydra") as HTMLElement).appendChild(renderer.domElement);
+		(document.body as HTMLElement).appendChild(renderer.domElement);
 
 		// shadow stuff
 		renderer.shadowMap.enabled = true
