@@ -1,5 +1,17 @@
 # Hydra example for three js mesh texture
 
+## hydra hack for flok, etc
+
+Copy and run this:
+
+```javascript
+fetch("https://raw.githubusercontent.com/rexmalebka/hydra-threejs/changes/hack/dist/hydra-three.js").then( x=> x.text() ).then(text=>{
+  let script = document.createElement("script")
+  script.innerHTML = text
+  document.body.appendChild(script)
+})
+```
+
 ## Hydra standalone
 
 for [hydra standalone](https://github.com/ojack/hydra-standalone)
